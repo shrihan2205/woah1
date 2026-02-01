@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe6ea;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #d6336c;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+      left: 40%;
+    }
+
+    #no {
+      background-color: #adb5bd;
+      color: white;
+      left: 55%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Will you be my Valentine? 💖</h1>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById("no");
+    const yesButton = document.getElementById("yes");
+
+    noButton.addEventListener("mouseover", () => {
+      const container = document.querySelector(".container");
+
+      const maxX = container.offsetWidth - noButton.offsetWidth;
+      const maxY = container.offsetHeight - noButton.offsetHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noButton.style.left = randomX + "px";
+      noButton.style.top = randomY + "px";
+    });
+
+    yesButton.addEventListener("click", () => {
+      document.body.innerHTML = "<h1 style='color:#d6336c;'>YAYAYYAYYY I LOVE YOU CUTIEIEEIE 💕🥰 (you didnt have an option)😛 </h1>";
+    });
+  </script>
+
+</body>
+</html>
